@@ -17,6 +17,7 @@ class Settings(BaseSettings):
     postgres_db: str
     postgres_host: str = "localhost"
     postgres_port: int = 5432
+    sec_user_agent: str
 
     @property
     def database_url(self) -> URL:
