@@ -1,0 +1,11 @@
+Alembic migrations for the sec-rag Postgres schema.
+
+Source of truth: src/secrag/storage/models.py. The DB URL comes from .env (see migrations/env.py).
+
+Workflow:
+  1. Change the models.
+  2. uv run alembic revision --autogenerate -m "short description"
+  3. Review the generated file in migrations/versions/ (autogenerate misses renames and
+     can duplicate enum CHECK constraints).
+  4. uv run alembic upgrade head
+Roll back one step with: uv run alembic downgrade -1
